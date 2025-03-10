@@ -32,6 +32,7 @@ from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobot
 
 class A1RoughCfg( LeggedRobotCfg ):
     class init_state( LeggedRobotCfg.init_state ):
+        #初始时刻状态，当action为0时，机器人所处状态的关节角度
         pos = [0.0, 0.0, 0.42] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
             'FL_hip_joint': 0.1,   # [rad]

@@ -38,7 +38,7 @@ from legged_gym.utils import get_args, task_registry
 import torch
 
 def train(args):
-    # make_env是通过字典匹配、命令行更新来初始化env类(LeggedRobot)和env_cfg类(A1RoughCfg)
+    # make_env是通过字典匹配、命令行更新来初始化env类(LeggedRobot)和env_cfg类(A1RoughCfg)，其中env包含了env_cfg，在env.cfg类中
     env, env_cfg = task_registry.make_env(name=args.task, args=args) 
     # make_alg_runner函数是通过字典匹配已注册的配置与命令行更新初始化train_cfg类(LeggedRobotCfgPPO)
     # 通过将legged_gym中的参数传入OnPolicyRunner类，对runner类(在rsl_rl中，是OnPolicy策略算法)进行初始化实例
